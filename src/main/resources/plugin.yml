@@ -1,0 +1,9 @@
+name: Pl3xmapHideAddon
+version: '${project.version}'
+main: me.stephenminer.pl3xmapaddon.Pl3xmapAddon
+api-version: '1.20'
+depend:
+  - Pl3xMap
+commands:
+  reloadmaphider:
+    permission: "mapaddon.reload"
