@@ -26,6 +26,10 @@ public class HidePlayerManager extends BukkitRunnable{
                 PlayerInventory inv = bukkitPlayer.getInventory();
                 boolean handCheck = checkHands(inv.getItemInMainHand(),inv.getItemInOffHand());
                 boolean yCheck = checkY(bukkitPlayer.getLocation());
+                if (handCheck || yCheck){
+                    if (!mapPlayer.isHidden()) mapPlayer.setHidden(true, false);
+                }else if (mapPlayer.isHidden()) mapPlayer.setHidden(false,false);
+                /*
                 //hands good but above hiding y-level
                 if (handCheck && !yCheck){
                     if (!mapPlayer.isHidden()) mapPlayer.setHidden(true, false);
@@ -41,6 +45,8 @@ public class HidePlayerManager extends BukkitRunnable{
                 if (handCheck && yCheck){
                     if (!mapPlayer.isHidden()) mapPlayer.setHidden(true, false);
                 }
+
+                 */
 
 
             }
